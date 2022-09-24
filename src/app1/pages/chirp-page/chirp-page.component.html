@@ -1,0 +1,7 @@
+<app-nav-bar></app-nav-bar>
+<div class="container" *ngIf="userService.user$ | async as user">
+  <h1>Post a Trent</h1>
+  <app-chirp-box [user]="user"></app-chirp-box>
+  <h2>Your Trents</h2>
+  <app-profile-chirp-list [chirpList]="chirps$"></app-profile-chirp-list>
+</div>

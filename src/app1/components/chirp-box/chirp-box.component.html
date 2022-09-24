@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row py-3 chirp-box">
+    <div class="col-1" *ngIf="user">
+      <img class="avatar" src="{{user.photoURL}}" alt="{{user.displayName}}+ avatar" />
+    </div>
+    <div class="col pl-4 pl-lg-1">
+      <form [formGroup]="chirpForm" (ngSubmit)="onSubmit()">
+        <textarea name="text" class="form-control mb-2" placeholder="What's Happening...?"
+          formControlName="text"></textarea>
+
+        <!-- Only show this if the post length is > 140 -->
+        <small class="form-text" *ngIf="lengthIsInvalid()">
+          140 character limit!
+        </small>
+
+        <div class="text-right">
+
+          <!-- Disable if invalid post length -->
+          <button class="btn btn-primary" [disabled]="lengthIsInvalid()">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Share
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

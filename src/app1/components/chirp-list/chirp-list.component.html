@@ -1,0 +1,46 @@
+<div class="container" id="chirp-container">
+  <div
+    class="row py-4 bg-white border"
+    *ngIf="chirpList | async; else no_chirps"
+  >
+    <ng-container *ngFor="let chirp of chirpList | async">
+      <div class="col-2">
+        <img
+          class="avatar"
+          src="{{ chirp.user.photoURL }}"
+          alt="{{ chirp.user.displayName }} + avatar"
+        />
+      </div>
+      <div class="col-10">
+        <span class="handle">{{ chirp.user.displayName }}</span>
+        <span class="time" title="{{ chirp.time | date: 'medium' }}">{{
+          chirp.timeFromNow
+        }}</span>
+        <div class="chirp">
+          {{ chirp.text }}
+          <span >
+            <button style="display: none" (click)="deleteChirp(chirp)">
+              <i class="fa fa-trash-o" style="display: none"></i>
+            </button>
+          </span>
+          <ng-template #elseTemplate>
+           {{user.uid}}
+         </ng-template>
+        </div>
+
+        <!-- A section for showing chirp likes -->
+        <!-- <div class="likes">          
+              <i class="fa fa-heart" aria-label="like" ></i>
+              <span>{{likeCount}}</span>
+            </div> -->
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #no_chirps>
+    <div class="row">
+      <div class="col">
+        <p>No trents yet, please add one!</p>
+      </div>
+    </div>
+  </ng-template>
+</div>

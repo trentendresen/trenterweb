@@ -1,0 +1,19 @@
+<div class="topnav" id="myTopnav">
+  <a [routerLink]="['/']" >Home</a>
+  <a [routerLink]="['/profile']">Profile</a>
+  <a [routerLink]="['/trents']">Trents</a>
+  <div *ngIf="userService.user$ | async; then authenticated; else guest"></div>
+  <ng-template #guest>
+    <a id="button" class="float-right">
+      <button (click)="userService.googleSignin()">login</button>
+    </a>
+  </ng-template>
+  <ng-template #authenticated>
+    <a id="button" class="float-right">
+      <button (click)="userService.signOut()">Logout</button>
+    </a>
+  </ng-template>
+  <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>

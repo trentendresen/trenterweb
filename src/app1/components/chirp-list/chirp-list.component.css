@@ -1,0 +1,42 @@
+#chirp-container {
+    margin-top: 2em;
+}
+
+.handle {
+	font-size:1.25em;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.fa,button{
+	right: 0;
+	display: none;
+}
+
+.chirp:hover span .fa {
+	display: flex;
+}
+
+.chirp:hover span button {
+	display: flex;
+}
+
+.time {
+	color: #9d9d9d;
+}
+
+.chirp {
+	font-size: 1.5em;
+}
+
+.likes {
+	color:#adadad;
+}
+
+.likes .user-liked {
+	color: red;
+}
+
+.fa-heart {
+	cursor: pointer;
+}

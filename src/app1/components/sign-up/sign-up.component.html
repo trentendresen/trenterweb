@@ -1,0 +1,32 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <!--email-->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input class="form-control" id="email" type="email" name="email" formControlName="email" />
+  </div>
+
+  <!--password-->
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input class="form-control" id="password" type="password" name="password" formControlName="password" />
+  </div>
+
+  <!--handle-->
+  <div class="form-group">
+    <label for="handle">Handle</label>
+    <input class="form-control" id="handle" name="handle" formControlName="handle" />
+  </div>
+
+  <!--avatar-->
+  <div class="form-group">
+    <img class="avatar" src="/assets/img/no-user-pic.png" alt="avatar preview" />
+    <label for="avatar">Avatar Image URL</label>
+    <input class="form-control" id="avatar" name="avatar" formControlName="avatar"
+      placeholder="http://www.example.com/my-picture.jpg" />
+  </div>
+
+  <!--buttons-->
+  <div class="form-group">
+    <button class="btn btn-primary mr-2">Sign-up</button>
+  </div>
+</form>

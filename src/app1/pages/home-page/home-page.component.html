@@ -1,0 +1,35 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div *ngIf="userService.user$ | async; then authenticated; else guest">
+    <!-- template will replace this div -->
+  </div>
+
+  <ng-template #guest>
+    <h1>Hello Everyone welcome to Trenter</h1>
+
+    <h2>The last social media app you will ever need....</h2>
+    <h3>
+      Down below you can see a video from our creator and brilliant visionary
+      Trent Endresen
+    </h3>
+    <video width="320" height="240" controls>
+      <source src="assets/presentation_video.mp4" type="video/mp4" />
+    </video>
+  </ng-template>
+
+  <ng-template #authenticated>
+    <div *ngIf="userService.user$ | async as user">
+      <h1>Hello {{ user.displayName }} welcome to Trenter</h1>
+
+      <h2>The last social media app you will ever need....</h2>
+      <h3>
+        Down below you can see a video from our creator and brilliant visionary
+        Trent Endresen
+      </h3>
+      <video width="320" height="240" controls>
+        <source src="assets/presentation_video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </ng-template>
+</div>

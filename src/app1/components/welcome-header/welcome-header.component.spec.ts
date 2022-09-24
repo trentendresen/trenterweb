@@ -1,0 +1,25 @@
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
+import { WelcomeHeaderComponent } from './welcome-header.component';
+
+describe('WelcomeHeaderComponent', () => {
+  let component: WelcomeHeaderComponent;
+  let fixture: ComponentFixture<WelcomeHeaderComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ WelcomeHeaderComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(WelcomeHeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
