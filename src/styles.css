@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* CSS for what we can't easily do in Bootstrap */
+
+.fa-twitter {
+	color:#55acee;
+  -ms-transform: scaleX(-1); /* IE 9 */
+  -webkit-transform: scaleX(-1); /* Chrome, Safari, Opera */
+  transform: scaleX(-1);
+}
+
+body {
+	background:lightblue;
+}
+
+header button {
+	position:absolute;
+	right:10px;
+	top: 10px;
+}
+
+.chirp-box {
+	background-color: rgb(229, 242, 247);
+}
+
+.chirp-item {
+	border-bottom:1px solid #d3d3d3;
+	padding:20px;
+	background-color: white;
+}
+
+.avatar {
+	width:50px;
+	height:50px;
+  border-radius: 50%;
+  margin-right: .5em;
+  margin-bottom: .5em;
+}
